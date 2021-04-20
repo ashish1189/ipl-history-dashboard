@@ -28,14 +28,19 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
                 .date(LocalDate.parse(matchInput.getDate()))
                 .playerOfMatch(matchInput.getPlayer_of_match())
                 .venue(matchInput.getVenue())
+                .neutralVenue(matchInput.getNeutral_venue())
                 .team1(firstInningsTeam)
                 .team2(secondInningsTeam)
                 .tossWinner(matchInput.getToss_winner())
                 .tossDecision(matchInput.getToss_decision())
+                .matchWinner(matchInput.getWinner())
                 .result(matchInput.getResult())
                 .resultMargin(matchInput.getResult_margin())
+                .eliminator(matchInput.getEliminator())
+                .method(matchInput.getMethod())
                 .umpire1(matchInput.getUmpire1())
                 .umpire2(matchInput.getUmpire2())
+                .matchWinner(matchInput.getWinner())
                 .build();
     }
 }

@@ -9,7 +9,9 @@ import javax.persistence.Id;
 
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@ToString
 public class Team {
 
     @Id

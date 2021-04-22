@@ -1,17 +1,17 @@
 package io.infinity.dashboard.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Team {
 
     @Id
@@ -20,6 +20,9 @@ public class Team {
     private String teamName;
     private long totalMatches;
     private long totalWins;
+
+    @Transient
+    private List<Match> matches;
 
     public Team(String teamName, long totalMatches) {
         this.teamName = teamName;

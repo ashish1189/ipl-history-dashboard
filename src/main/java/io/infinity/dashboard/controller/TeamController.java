@@ -23,7 +23,7 @@ public class TeamController {
     @GetMapping("/team/{teamName}")
     public Team getTeam(@PathVariable String teamName) {
 
-        Team team = teamRepository.findByTeamName(teamName);
+        var team = teamRepository.findByTeamName(teamName);
         team.setMatches(matchRepository.findLatestMatchesByTeam(teamName, 5));
 
         return team;
